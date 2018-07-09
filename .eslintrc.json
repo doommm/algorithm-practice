@@ -1,0 +1,61 @@
+{
+  "plugins": [],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/extensions": [1, { "ts": "never" }],
+    "indent": [0, 2],
+    "eqeqeq": ["warn","always", {"null": "ignore"}],
+    // "comma-dangle": [1, "always-multiline"],
+    "no-console": 0,
+    "no-debugger": 1,
+    "no-extra-semi": 1,
+    "no-extra-parens": 1,
+    "no-irregular-whitespace": 0,
+    "no-undef": 0,
+    "no-unused-vars": 0,
+    "semi": 1,
+    "semi-spacing": 1,
+    "valid-jsdoc": [
+      0,
+      {
+        "requireReturn": false
+      }
+    ],
+    "linebreak-style": "off",
+    "no-param-reassign": "off",
+    // "max-len": [
+    //   "error",
+    //   80,
+    //   2,
+    //   {
+    //     "ignoreUrls": true,
+    //     "ignoreComments": false,
+    //     "ignoreRegExpLiterals": true,
+    //     "ignoreStrings": true,
+    //     "ignoreTemplateLiterals": true
+    //   }
+    // ],
+    "quotes": [
+      1,
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  }
+}
