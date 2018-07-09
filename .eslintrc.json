@@ -1,9 +1,6 @@
 {
   "plugins": [],
-  "extends": [
-    "eslint:recommended",
-    "airbnb-base"
-  ],
+  "extends": ["eslint:recommended", "airbnb-base"],
   "env": {
     "browser": true,
     "es6": true
@@ -16,7 +13,7 @@
   "rules": {
     "import/extensions": [1, { "ts": "never" }],
     "indent": [0, 2],
-    "eqeqeq": ["warn","always", {"null": "ignore"}],
+    "eqeqeq": ["warn", "always", { "null": "ignore" }],
     // "comma-dangle": [1, "always-multiline"],
     "no-console": 0,
     "no-debugger": 1,
@@ -35,18 +32,7 @@
     ],
     "linebreak-style": "off",
     "no-param-reassign": "off",
-    // "max-len": [
-    //   "error",
-    //   80,
-    //   2,
-    //   {
-    //     "ignoreUrls": true,
-    //     "ignoreComments": false,
-    //     "ignoreRegExpLiterals": true,
-    //     "ignoreStrings": true,
-    //     "ignoreTemplateLiterals": true
-    //   }
-    // ],
+    "no-mixed-operators": "warn",
     "quotes": [
       1,
       "single",

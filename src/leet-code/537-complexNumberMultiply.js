@@ -17,9 +17,23 @@
   (a1+b1i)*(a2+b2i) = a1a2 - b1b2 + (a1b2+a2b1)i
 */
 
+function match(pattern) {
+  const matches = /(-?\d+)\+(-?\d+)i/.exec(pattern);
+  // r;
+  return [Number(matches[1] || 0), Number(matches[2] || 0)];
+}
+
 /**
  * @param {string} a
  * @param {string} b
  * @return {string}
  */
-function complexNumberMultiply(a, b) {}
+function complexNumberMultiply(a, b) {
+  const [a1, b1] = match(a);
+  const [a2, b2] = match(b);
+  return `${a1 * a2 - b1 * b2}+${a1 * b2 + a2 * b1}i`;
+}
+
+// const result = complexNumberMultiply('1+-1i', '1+-1i');
+const result = complexNumberMultiply('1+1i', '1+1i');
+console.log(result);
