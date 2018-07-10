@@ -19,75 +19,43 @@
   给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。
 */
 
-const exceptions = {
-  4: 'IV',
-  9: 'IX',
-  40: 'XL',
-  90: 'XC',
-  400: 'CD',
-  900: 'CM',
-};
-
-const romanMap = {
-  1: 'I',
-  5: 'V',
-  10: 'X',
-  50: 'L',
-  100: 'C',
-  500: 'D',
-  1000: 'M',
-};
-
-const DIGITS = [1000, 100, 10, 1];
-const HALF_DIGITS = { 100: 500, 10: 50, 1: 5 };
-
-function divide(a, b) {
-  const remainder = a % b;
-  const quotient = (a - remainder) / b;
-  return { remainder, quotient };
-}
-
-function mapDigit(count, divisor) {
-  if (count < 1) {
-    return '';
-  }
-  const num = count * divisor;
-  if (`${num}` in exceptions) {
-    return `${exceptions[num]}`;
-  } else {
-    let result = '';
-    const half = HALF_DIGITS[divisor];
-    if (half && num >= half) {
-      const halfRemainder = num % half;
-      count = halfRemainder / divisor;
-      result += romanMap[num - halfRemainder];
-    }
-    while (count !== 0) {
-      result += `${romanMap[divisor]}`;
-      count -= 1;
-    }
-    return result;
-  }
-}
-
 /**
  * @param {number} num
  * @return {string}
  */
 var intToRoman = function(num) {
-  let roman = '';
-  let remainder = num;
-  let quotient;
+  let res = '';
+  const roman = ['M', 'D', 'C', 'L', 'X', 'V', 'I'];
+  const value = [1000, 500, 100, 50, 10, 5, 1];
 
-  DIGITS.forEach((digit, i) => {
-    let r = divide(remainder, digit);
-    quotient = r.quotient;
-    remainder = r.remainder;
-    roman += mapDigit(quotient, digit);
-  });
+  const length = value.length;
 
-  return roman;
+  for (let n = 0; n < length; n += 2) {
+    const digit = value[n];
+
+    let x = Math.floor(num / digit);
+
+    if (x < 4) {
+      for (let i = 1; i <= x; i += 1) {
+        res += roman[n];
+      }
+    } else if (x === 4) {
+      res += roman[n] + roman[n - 1];
+    } else if (x > 4 && x < 9) {
+      // 小于等于 5XXX... 的部分
+      res += roman[n - 1];
+      // 大于 5XXX... 的部分
+      for (let i = 6; i <= x; i += 1) {
+        res += roman[n];
+      }
+    } else if (x === 9) {
+      res += roman[n] + roman[n - 2];
+    }
+
+    num %= digit;
+  }
+  return res;
 };
 
-const rm = intToRoman(58);
+const rm = intToRoman(1994);
 console.log(rm);
