@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+.vs/
+/packages/**/*
+obj/
+bin/

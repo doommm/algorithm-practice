@@ -13,7 +13,7 @@
   这个特殊的规则只适用于以下六种情况：
 
   I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。
-  X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 
+  X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。
   C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 
   给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。
@@ -23,12 +23,12 @@
  * @param {number} num
  * @return {string}
  */
-var intToRoman = function(num) {
+const intToRoman = (num) => {
   let res = '';
   const roman = ['M', 'D', 'C', 'L', 'X', 'V', 'I'];
   const value = [1000, 500, 100, 50, 10, 5, 1];
 
-  const length = value.length;
+  const { length } = value;
 
   for (let n = 0; n < length; n += 2) {
     const digit = value[n];
