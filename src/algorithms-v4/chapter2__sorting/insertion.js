@@ -8,7 +8,8 @@ const { exch, less, show } = require('./utils');
  * 插入排序
  *
  * [1,3,5,2,9,4,...]
- * @param {number[]} a
+ * @param {number[]} a origin array
+ * @returns {number[]} sorted array
  */
 function sort(a) {
   const n = a.length;
@@ -20,7 +21,6 @@ function sort(a) {
   return a;
 }
 
-
 /**
  *
  * [(哨兵),3,1,5,2,9,4,...]
@@ -31,6 +31,7 @@ function sortWithGuard(a) {
   const n = a.length;
   for (let i = 2; i < n; i += 1) {
     a[0] = a[i];
+    exch(a, 0, i);
     let j;
     for (j = i - 1; less(a[0], a[j]); j -= 1) {
       a[j + 1] = a[j];
@@ -39,7 +40,12 @@ function sortWithGuard(a) {
   }
   return a;
 }
-let res;
-// res = sortWithGuard([0, 1, 3, 5, 2, 9, 7]);
-res = sort([1, 1, 2, 2, 3, 2]);
-console.log(show(res));
+
+(function run() {
+  let res;
+  // res = sortWithGuard([0, 1, 3, 5, 2, 9, 7]);
+  res = sort([1, 1, 2, 2, 3, 2]);
+  console.log(show(res));
+})();
+
+module.exports.sort = sort;

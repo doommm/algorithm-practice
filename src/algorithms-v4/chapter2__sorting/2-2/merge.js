@@ -7,9 +7,9 @@ const { exch, less, show } = require('../utils');
  *
  * @param {number[]} a array
  * @param {number[]} aux helper array
- * @param {number} lo lower index
+ * @param {number} lo low index
  * @param {number} mid middle index
- * @param {number} hi higher index
+ * @param {number} hi high index
  * @returns {number[]} origin array
  */
 function merge(a, aux, lo, mid, hi) {
@@ -42,8 +42,8 @@ function merge(a, aux, lo, mid, hi) {
  *
  * @param {number[]} a array
  * @param {number[]} aux helper array
- * @param {number} lo lower index
- * @param {number} hi higher index
+ * @param {number} lo low index
+ * @param {number} hi high index
  */
 function sort(a, aux, lo, hi) {
   /*

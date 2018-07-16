@@ -16,6 +16,6 @@
       "request": "launch",
       "webRoot": "${workspaceFolder}",
       "file": "${file}"
-  }
+    }
   ]
 }

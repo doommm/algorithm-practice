@@ -30,5 +30,8 @@ function sort(a: Student[], R: number) {
   for (let i = 0; i < N; i += 1) {
     a[i] = aux[i];
   }
-
 }
+
+(function run() {
+  console.log(1 + 1);
+})();
