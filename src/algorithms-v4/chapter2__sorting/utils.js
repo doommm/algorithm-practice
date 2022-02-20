@@ -66,8 +66,8 @@ function isSorted(a) {
   return true;
 }
 
-exports.isSorted = isSorted;
-exports.less = less;
-exports.exch = exch;
-exports.show = show;
-exports.compareTo = compareTo;
+module.exports.isSorted = isSorted;
+module.exports.less = less;
+module.exports.exch = exch;
+module.exports.show = show;
+module.exports.compareTo = compareTo;

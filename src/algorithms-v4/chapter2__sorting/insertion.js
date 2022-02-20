@@ -23,7 +23,7 @@ function sort(a) {
 
 /**
  *
- * [(哨兵),3,1,5,2,9,4,...]
+ * `[(哨兵), 3, 1, 5, 2, 9, 4, ...]`
  * @param {number[]} a
  * @returns {number[]}
  */

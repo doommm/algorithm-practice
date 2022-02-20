@@ -32,7 +32,7 @@ function partition(a, lo, hi) {
     exch(a, i, j);
   }
 
-  /* 
+  /*
     由于采用 a[++i], a[--j] 取数组元素
     此时 j 指向不大于 v 的最后一个元素, i 指向不小于 v 的第一个元素
     故调换 a[lo] 与 a[j] 的值
